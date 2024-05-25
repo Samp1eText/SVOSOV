@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify data-index</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+        .modal {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1000;
+        }
+        .modal input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>SVO Sentence</h2>
+        <p id="svo-sentence">
+            I love you.
+        </p>
+    </div>
+    <div>
+        <h2>SOV Sentence</h2>
+        <p id="sov-sentence">
+            나는 너를 사랑해.
+        </p>
+    </div>
+    <div id="modal" class="modal">
+        <label for="index-input">data-index:</label>
+        <input type="text" id="index-input">
+        <button id="set-index">Set</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

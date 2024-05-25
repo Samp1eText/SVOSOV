@@ -20,13 +20,20 @@
             </p>
         </div>
 
+        <hr>
+
         <div class="source">
             <p class="sentenceSource">
                 Source: Nowhere
             </p>
         </div>
+
+        <hr>
         
-        <button class="randomSentence" onclick="randomSentence()">RANDOM SENTENCE</button>
+        <button class="randomSentence" onclick="randomSentence()">임의의 문장</button>
+
+        <input type="checkbox" id="krTranslate" name="krTranslate" onclick="koreanTranslateCheckbox()" checked />
+        <label for="krTranslate">한국어 표시 여부</label>
     </container>
 
     <script src="script.js"></script>

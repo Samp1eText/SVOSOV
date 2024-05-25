@@ -1,7 +1,7 @@
 const sentences = [
     {
-        "sEN": "<span class=\"word1\">I</span> <span class=\"word2\">am</span> <span class=\"word3\">a web developer</span> <span class=\"word4\">and</span> <span class=\"word5\">a programmer</span> <span class=\"word6\">who</span> <span class=\"word7\">enjoys</span> <span class=\"word8\">creating</span> <span class=\"word9\">websites</span> <span class=\"word10\">and</span> <span class=\"word11\">application</span><span class=\"word12\">.</span>",
-        "sKR": "<span class=\"word1\">나는</span> <span class=\"word9\">웹사이트</span><span class=\"word10\">와</span> <span class=\"word11\">어플리케이션</span> <span class=\"word8\">만들기를</span> <span class=\"word7\">즐기</span><span class=\"word6\">는</span> <span class=\"word3\">웹 개발자</span><span class=\"word4\">이자</span> <span class=\"word5\">프로그래머</span><span class=\"word2\">입니다</span><span class=\"word12\">.</span>",
+        "sEN": "<span class=\"data-index_1\">I</span> <span class=\"data-index_2\">am</span> <span class=\"data-index_3\">a web developer</span> <span class=\"data-index_4\">and</span> <span class=\"data-index_5\">a programmer</span> <span class=\"data-index_6\">who</span> <span class=\"data-index_7\">enjoys</span> <span class=\"data-index_8\">creating</span> <span class=\"data-index_9\">websites</span> <span class=\"data-index_10\">and</span> <span class=\"data-index_11\">application</span><span class=\"data-index_12\">.</span>",
+        "sKR": "<span class=\"data-index_1\">나는</span> <span class=\"data-index_9\">웹사이트</span><span class=\"data-index_10\">와</span> <span class=\"data-index_11\">어플리케이션</span> <span class=\"data-index_8\">만들기를</span> <span class=\"data-index_7\">즐기</span><span class=\"data-index_6\">는</span> <span class=\"data-index_3\">웹 개발자</span><span class=\"data-index_4\">이자</span> <span class=\"data-index_5\">프로그래머</span><span class=\"data-index_2\">입니다</span><span class=\"data-index_12\">.</span>",
         "sSource": "Nowhere"
     },
     {
@@ -29,7 +29,7 @@ function randomSentence() {
     });
     
     for (let i = 1; i <= 1000; i++) {
-        const wordSpans = document.querySelectorAll(`span.word${i}`);
+        const wordSpans = document.querySelectorAll(`span.data-index_${i}`);
     
         wordSpans.forEach(span => {
             span.addEventListener('mouseover', () => {
