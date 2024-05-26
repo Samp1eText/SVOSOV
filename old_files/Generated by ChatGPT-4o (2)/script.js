@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const svoCodeOutput = document.getElementById('svo-code-output');
     const sovCodeOutput = document.getElementById('sov-code-output');
-    const jsonOutput = document.getElementById('json-output');
 
     let selectedRange;
 
@@ -30,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
             selectedText.removeAllRanges();
             selectedRange = null;  // Clear the selection range after applying the index
             updateCodeOutput(editableDiv, codeOutput);
-            updateJsonOutput();
         }
     }
 
@@ -45,27 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
         codeOutput.textContent = editableDiv.innerHTML;
     }
 
-    function updateJsonOutput() {
-        const svoSentence = svoEditable.innerHTML;
-        const sovSentence = sovEditable.innerHTML;
-
-        // Properly escape the values for JSON output
-        const escapeJSONString = (str) => {
-            return str.replace(/\\/g, '\\\\')
-                      .replace(/"/g, '\\"')
-                      .replace(/\n/g, '\\n')
-                      .replace(/\r/g, '\\r')
-                      .replace(/\t/g, '\\t');
-        };
-
-        const jsonData = `{
-    "svo_sentence": "${escapeJSONString(svoSentence)}",
-    "sov_sentence": "${escapeJSONString(sovSentence)}"
-}`;
-
-        jsonOutput.textContent = jsonData;
-    }
-
     svoEditable.addEventListener('mouseup', handleTextSelection);
     sovEditable.addEventListener('mouseup', handleTextSelection);
 
@@ -76,16 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCodeOutput(svoEditable, svoCodeOutput);
     updateCodeOutput(sovEditable, sovCodeOutput);
 
-    // Update code output and JSON output on content change
-    svoEditable.addEventListener('input', () => {
-        updateCodeOutput(svoEditable, svoCodeOutput);
-        updateJsonOutput();
-    });
-    sovEditable.addEventListener('input', () => {
-        updateCodeOutput(sovEditable, sovCodeOutput);
-        updateJsonOutput();
-    });
-
-    // Initial JSON output
-    updateJsonOutput();
+    // Update code output on content change
+    svoEditable.addEventListener('input', () => updateCodeOutput(svoEditable, svoCodeOutput));
+    sovEditable.addEventListener('input', () => updateCodeOutput(sovEditable, sovCodeOutput));
 });

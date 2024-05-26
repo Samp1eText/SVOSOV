@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify data-index</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+        .modal {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1000;
+        }
+        .modal input {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>SVO Sentence</h2>
+        <p id="svo-sentence">
+            I am a web developer and a programmer who enjoys creating websites and application.
+        </p>
+    </div>
+    <div>
+        <h2>SOV Sentence</h2>
+        <p id="sov-sentence">
+            나는 웹사이트와 어플리케이션 만들기를 즐기는 웹 개발자이자 프로그래머입니다.
+        </p>
+    </div>
+    <div id="modal" class="modal">
+        <label for="index-input">data-index:</label>
+        <input type="text" id="index-input">
+        <button id="set-index">Set</button>
+    </div>
+    <div>
+        <input type="text" id="svo_text"> <button id="svo">SVO</button>
+        <input type="text" id="sov_text"> <button id="sov">SOV</button>
+    </div>
+    <script src="script_editor.js"></script>
+</body>
+</html>
