@@ -1,12 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     const svoEditable = document.getElementById('svo-sentence');
     const sovEditable = document.getElementById('sov-sentence');
+    const sourceEditable = document.getElementById('source');
 
     const svoIndexInput = document.getElementById('svo-index-input');
     const setSvoIndexButton = document.getElementById('set-svo-index');
 
     const sovIndexInput = document.getElementById('sov-index-input');
     const setSovIndexButton = document.getElementById('set-sov-index');
+
+    const setSourceIndexButton = document.getElementById('set-source-index');
 
     const svoCodeOutput = document.getElementById('svo-code-output');
     const sovCodeOutput = document.getElementById('sov-code-output');
@@ -48,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateJsonOutput() {
         const svoSentence = svoEditable.innerHTML;
         const sovSentence = sovEditable.innerHTML;
+        const source = sourceEditable.innerHTML;
 
         // Properly escape the values for JSON output
         const escapeJSONString = (str) => {
@@ -60,7 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const jsonData = `{
     "svo_sentence": "${escapeJSONString(svoSentence)}",
-    "sov_sentence": "${escapeJSONString(sovSentence)}"
+    "sov_sentence": "${escapeJSONString(sovSentence)}",
+    "source": "${escapeJSONString(source)}"
 }`;
 
         jsonOutput.textContent = jsonData;
@@ -85,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCodeOutput(sovEditable, sovCodeOutput);
         updateJsonOutput();
     });
+    sourceEditable.addEventListener('input', updateJsonOutput);
 
     // Initial JSON output
     updateJsonOutput();
