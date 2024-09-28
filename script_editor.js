@@ -63,10 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         const jsonData = `{
-    "svo_sentence": "${escapeJSONString(svoSentence)}",
-    "sov_sentence": "${escapeJSONString(sovSentence)}",
-    "source": "${escapeJSONString(source)}"
-}`;
+            "svo_sentence": "${escapeJSONString(svoSentence)}",
+            "sov_sentence": "${escapeJSONString(sovSentence)}",
+            "source": "${escapeJSONString(source)}"
+        }`;
 
         jsonOutput.textContent = jsonData;
     }
